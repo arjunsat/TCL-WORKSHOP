@@ -500,12 +500,12 @@ Windows paths: prefer file normalize to avoid backslash hell.
 Large concatenations: use append/lappend (efficient), not repeated set s "$s...".
 
 21) Putting it all together (EDA-grade skeleton)
-# vsdsynth.tcl — CSV→variables→SDC→Yosys→OpenTimer→QOR
+#vsdsynth.tcl — CSV→variables→SDC→Yosys→OpenTimer→QOR
 package require Tcl 8.6
 
 proc die {msg} { puts stderr $msg; exit 1 }
 
-# 1) Read config CSV
+ 1) Read config CSV
 set cfgCsv [lindex $argv 0]
 if {$cfgCsv eq "" || ![file exists $cfgCsv]} { die "config CSV missing" }
 set CFG [csv2dict $cfgCsv]
@@ -513,17 +513,17 @@ foreach k {OutputDirectory NetlistDirectory EarlyLibraryPath LateLibraryPath Con
   if {[dict exists $CFG $k]} { dict set CFG $k [file normalize [dict get $CFG $k]] }
 }
 
-# 2) Emit SDC
+ 2) Emit SDC
 set top   [dict get $CFG DesignName]
 set out   [dict get $CFG OutputDirectory]
 file mkdir $out
 emit_sdc [dict get $CFG ConstraintsFile] [file join $out "${top}.sdc"]
 
-# 3) Yosys
+ 3) Yosys
 set log [run_yosys $top [dict get $CFG NetlistDirectory] [dict get $CFG EarlyLibraryPath] $out]
 set ysRpt [file join $out "yosys.log"]; set fh [open $ysRpt w]; puts $fh $log; close $fh
 
-# 4) Timing (your OpenTimer invocation here) → produce timing.log
+4) Timing (your OpenTimer invocation here) → produce timing.log
  exec opentimer -f flow.cfg > [file join $out timing.log]
  set qor [extract_qor [file join $out timing.log]]
 puts "QOR: $qor"
