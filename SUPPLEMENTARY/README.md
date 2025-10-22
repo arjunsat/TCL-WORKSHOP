@@ -524,6 +524,6 @@ set log [run_yosys $top [dict get $CFG NetlistDirectory] [dict get $CFG EarlyLib
 set ysRpt [file join $out "yosys.log"]; set fh [open $ysRpt w]; puts $fh $log; close $fh
 
 # 4) Timing (your OpenTimer invocation here) → produce timing.log
-# exec opentimer -f flow.cfg > [file join $out timing.log]
-# set qor [extract_qor [file join $out timing.log]]
-# puts "QOR: $qor"
+ exec opentimer -f flow.cfg > [file join $out timing.log]
+ set qor [extract_qor [file join $out timing.log]]
+puts "QOR: $qor"
