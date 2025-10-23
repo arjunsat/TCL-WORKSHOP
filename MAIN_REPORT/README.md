@@ -6,7 +6,7 @@ vsdsynth.tcl Script Explanation
 set enable_prelayout_timing 1
 set working_dir [exec pwd]
 set vsd_array_length [llength [split [lindex $argv 0] .]]
-set input [lindex [split [lindex $argv 0] .] [expr {$vsd_array_length-1}]]
+set input [lindex [split [lindex $argv 0] .] [expr {$vsd_array_length - 1}]]
 
 if {![regexp {^csv} $input] || $argc != 1} {
     puts "Error in usage"
@@ -14,6 +14,7 @@ if {![regexp {^csv} $input] || $argc != 1} {
     puts "where <.csv> file has below inputs"
     exit
 } else {
+
 
 
 
