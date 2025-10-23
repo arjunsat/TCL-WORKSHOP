@@ -1,19 +1,8 @@
 vsdsynth.tcl Script Explanation
 ## 1. Script Setup and Input Validation
 
-#!/bin/env tclsh
+<img width="908" height="491" alt="image" src="https://github.com/user-attachments/assets/4fec04f7-8fb9-4960-a39c-6b3dda0b52f4" />
 
-set enable_prelayout_timing 1
-set working_dir [exec pwd]
-set vsd_array_length [llength [split [lindex $argv 0] .]]
-set input [lindex [split [lindex $argv 0] .] [expr {$vsd_array_length - 1}]]
-
-if {![regexp {^csv} $input] || $argc != 1} {
-    puts "Error in usage"
-    puts "Usage: ./vsdsynth <.csv>"
-    puts "where <.csv> file has below inputs"
-    exit
-} else {
 
 
 
@@ -25,6 +14,7 @@ This section initializes the Tcl interpreter and validates how the script is exe
 
 ## 2. CSV Parsing and Variable Initialization
 
+<img width="933" height="718" alt="image" src="https://github.com/user-attachments/assets/1ffcd2e0-54fc-4da4-80a3-74a5702f1869" />
 
 set columns [m columns]
 	m link my_arr
