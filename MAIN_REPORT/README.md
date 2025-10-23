@@ -1,17 +1,18 @@
 vsdsynth.tcl Script Explanation
 ## 1. Script Setup and Input Validation
 
-#! /bin/env tclsh
+#!/bin/env tclsh
+
 set enable_prelayout_timing 1
 set working_dir [exec pwd]
 set vsd_array_length [llength [split [lindex $argv 0] .]]
-set input [lindex [split [lindex $argv 0] .] $vsd_array_length-1]
+set input [lindex [split [lindex $argv 0] .] [expr {$vsd_array_length-1}]]
 
-if {![regexp {^csv} $input] || $argc!=1 } {
-	puts "Error in usage"
-	puts "Usage: ./vsdsynth <.csv>"
-	puts "where <.csv> file has below inputs"
-	exit
+if {![regexp {^csv} $input] || $argc != 1} {
+    puts "Error in usage"
+    puts "Usage: ./vsdsynth <.csv>"
+    puts "where <.csv> file has below inputs"
+    exit
 } else {
 
 
