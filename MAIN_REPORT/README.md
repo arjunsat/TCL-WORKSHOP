@@ -1,11 +1,7 @@
 vsdsynth.tcl Script Explanation
 ## 1. Script Setup and Input Validation
 
-
 #! /bin/env tclsh
-#-----------------------------------------------------------#
-#----- Checks whether vsdsynth usage is correct or not -----#
-#-----------------------------------------------------------#
 set enable_prelayout_timing 1
 set working_dir [exec pwd]
 set vsd_array_length [llength [split [lindex $argv 0] .]]
@@ -17,13 +13,7 @@ if {![regexp {^csv} $input] || $argc!=1 } {
 	puts "where <.csv> file has below inputs"
 	exit
 } else {
-	set filename [lindex $argv 0]
-	package require csv
-	package require struct::matrix
-	struct::matrix m
-	set f [open $filename]
-	csv::read2matrix $f m , auto
-	close $f
+
 
 
 This section initializes the Tcl interpreter and validates how the script is executed. It ensures that the user provides a .csv file as input and checks that the usage format is correct. If the file is missing or incorrectly specified, it prints an error message and exits. This prevents the rest of the flow from running with invalid inputs.
