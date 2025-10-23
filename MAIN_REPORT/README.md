@@ -1,4 +1,18 @@
-vsdsynth.tcl Script Explanation
+
+## WHAT ARE WE TRYING TO ACHIEVE WITH THE PROJECT?
+
+<img width="940" height="505" alt="image" src="https://github.com/user-attachments/assets/a72577b6-416b-4ac6-af2d-c149ae1bda84" />
+
+## What are we doing ?
+
+First we will create a command ----------VSDSYNTH-------we named it like that.
+
+What is VSDSYNTH  capable of?
+
+It can take .csv input and can pass it to TCL script.
+
+
+
 ## EXPLANATION OF THE PROJECT SOURE CODE USED BY THE INSTRUCTOR FOR THE WORKSHOP
 
 ## 1. Script Setup and Input Validation
