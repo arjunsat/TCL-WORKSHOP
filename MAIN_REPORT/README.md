@@ -17,6 +17,8 @@ if {![regexp {^csv} $input] || $argc != 1} {
 
 
 
+
+
 This section initializes the Tcl interpreter and validates how the script is executed. It ensures that the user provides a .csv file as input and checks that the usage format is correct. If the file is missing or incorrectly specified, it prints an error message and exits. This prevents the rest of the flow from running with invalid inputs.
 
 ## 2. CSV Parsing and Variable Initialization
