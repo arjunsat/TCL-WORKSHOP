@@ -1,5 +1,8 @@
 vsdsynth.tcl Script Explanation
+## EXPLANATION OF THE PROJECT SOURE CODE USED BY THE INSTRUCTOR FOR THE WORKSHOP
+
 ## 1. Script Setup and Input Validation
+
 
 <img width="908" height="491" alt="image" src="https://github.com/user-attachments/assets/4fec04f7-8fb9-4960-a39c-6b3dda0b52f4" />
 
