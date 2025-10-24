@@ -12,6 +12,33 @@ What is VSDSYNTH  capable of?
 It can take .csv input and can pass it to TCL script.
 
 
+## THE SNAPSHOTS OF VSDSYNT SHELL INTERFACE
+
+<img width="1190" height="728" alt="image" src="https://github.com/user-attachments/assets/e16f65a3-da96-4bec-86a8-2eae35737e89" />
+
+<img width="1207" height="630" alt="image" src="https://github.com/user-attachments/assets/544d2ad1-9f57-49c9-a2d3-748213ae4f54" />
+
+This section of the script is responsible for initializing the tool and validating user inputs before execution. It ensures that the correct number of command-line arguments is provided and that the input CSV file exists before the synthesis process begins.
+
+The script begins with a check on the number of arguments using $#argv. If the number of arguments is not equal to one, the script displays a message asking the user to provide a CSV file and then exits. This prevents the program from running without the necessary input file.
+
+Next, the script checks two possible conditions. It verifies whether the given argument corresponds to an existing file using -f $argv[1] and whether the argument is -help. If the provided file does not exist, the script displays an error message indicating that the CSV file cannot be found and exits. This prevents further execution with missing or incorrect files.
+
+If the user provides the -help argument, the script instead prints out the correct usage format, explaining how to run the tool. It mentions that the command should be written as ./vsdsynth <csv file> and that the CSV file must contain two columns with the first column being case-sensitive keywords. This acts as a user guide to help new users understand the required input format.
+
+Overall, this part of the script ensures that the user provides the right kind of input before the actual synthesis or constraint generation begins. It avoids errors due to missing files or incorrect command usage and provides clear guidance when needed.
+
+
+<img width="1223" height="732" alt="image" src="https://github.com/user-attachments/assets/1a9256dd-261f-41b0-8907-0121b9f7435a" />
+
+This section of the script provides detailed help information for users when they enter the -help option. It lists and explains each field that must be included in the input CSV file so that the synthesis process can execute correctly.
+
+After displaying the basic usage command, the script explains the purpose of each parameter one by one using several echo statements. It tells the user that the <csv file> must have two columns, with the first column containing specific keywords that are case-sensitive. This ensures that the tool reads and maps the information correctly during synthesis.
+
+
+
+
+
 
 ## EXPLANATION OF THE PROJECT SOURE CODE USED BY THE INSTRUCTOR FOR THE WORKSHOP
 
